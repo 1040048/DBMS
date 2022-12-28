@@ -11,11 +11,22 @@ using namespace std;
 class Node 
 {
 private:
-
-    int data; // поле данных
-    Node* next; // указатель на следующий элемент
-    Node* previous; // указатель на предыдущий элемент
-    friend class DoublyLinkedList; // для доступа к private полям
+    /**
+     * \brief Поле данных
+     */
+    int data;
+    /**
+     * \brief Указатель на следующий элемент
+     */
+    Node* next;
+    /**
+     * \brief Указатель на предыдущий элемент
+     */
+    Node* previous;
+    /**
+     * \brief Для доступа к private полям
+     */
+    friend class DoublyLinkedList;
 
 public:
     /**
@@ -23,7 +34,6 @@ public:
      * \param data_ - значение узла
      */
     Node(const int data_) noexcept;
-
     /**
     * \brief Геттер для data
     */
