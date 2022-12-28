@@ -2,8 +2,6 @@
 
 DoublyLinkedList::DoublyLinkedList() noexcept : head(nullptr) , tail(nullptr) {}
 
-DoublyLinkedList::DoublyLinkedList(Node* node) noexcept : head(node), tail(nullptr) {}
-
 Node* DoublyLinkedList::nodeExists(const int data_) noexcept
 {
     Node* temp = nullptr;
@@ -21,7 +19,7 @@ Node* DoublyLinkedList::nodeExists(const int data_) noexcept
     return temp;
 }
 
-void DoublyLinkedList::insert_front(const int new_data) noexcept
+void DoublyLinkedList::insert(const int new_data) noexcept
 {
     Node* temp = new Node(new_data);
 
@@ -37,23 +35,7 @@ void DoublyLinkedList::insert_front(const int new_data) noexcept
     }
 }
 
-void DoublyLinkedList::insert_back(const int new_data) noexcept
-{
-    Node* temp = new Node(new_data);
-
-    if (tail == nullptr)
-    {
-        head = tail = temp;
-    }
-    else
-    {
-        tail->next = temp;
-        temp->previous = tail;
-        tail = temp;
-    }
-}
-
-void DoublyLinkedList::delete_front(const int data_)
+void DoublyLinkedList::remove(const int data_)
 {
     Node* ptr = nodeExists(data_);
 
