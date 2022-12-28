@@ -8,54 +8,52 @@ class DoublyLinkedList
 {
 private:
 
-    Node* head; // указатель на передний узел
-    Node* tail; // указатель на последний узел
+    /**
+     * \brief Указатель на передний узел
+     */
+    Node* head;
+    /**
+     * \brief Указатель на последний узел
+     */
+    Node* tail;
 
 public:
+
     /**
      * \brief Кнструктор по умолчанию
      */
     DoublyLinkedList() noexcept;
 
     /**
-     * \brief Конструктор с параметарми
-     * \param node - указатель на node
-     */
-    DoublyLinkedList(Node* node) noexcept;
-
-    /**
      * \brief Функция - проверка на существования узла
      * \param data_ - значение узла
+     * \return возвращает указатель на Node
      */
     Node* nodeExists(const int data_) noexcept;
 
     /**
-     * \brief Вставка узла в начало
+     * \brief Вставка узла
      * \param data_ - значение узла
      */
-    void insert_front(const int data_) noexcept;
-
-    /**
-     * \brief Вставка узла в конец
-     * \param data_ - значение узла
-     */
-    void insert_back(const int data_) noexcept;
+    void insert(const int data_) noexcept;
 
     /**
      * \brief Удаление узла
      * \param data_ - значение узла
      */
-    void delete_front(const int data_);
+    void remove(const int data_);
 
     /**
      * \brief Поиск узла в списке
      * \param data_ - значение узла
+     * \return true или false
      */
     bool search(const int data_) const;
 
     /**
      * \brief Печать списка
      * \param data_ - значение узла
+     * \return строка со списком
      */
     string  display() const;
 };
